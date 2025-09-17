@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Job Portal - Resume Upload</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #0984e3);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .upload-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 400px;
+      text-align: center;
+    }
+
+    .upload-container h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #2d3436;
+    }
+
+    .file-input {
+      margin: 20px 0;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #0984e3;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    label:hover {
+      background: #74b9ff;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      background: #00b894;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #55efc4;
+    }
+
+    .note {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #636e72;
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-container">
+    <h1>Upload Your Resume</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <div class="file-input">
+        <input type="file" id="resume" name="resume" accept="application/pdf" required />
+        <label for="resume">Choose PDF</label>
+      </div>
+      <button type="submit">Upload</button>
+    </form>
+    <p class="note">Only PDF files (max 2MB) are allowed.</p>
+  </div>
+</body>
+</html>
