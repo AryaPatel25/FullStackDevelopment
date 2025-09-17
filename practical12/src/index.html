@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    #container {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 350px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      margin: 8px auto;
+      padding: 10px;
+      font-size: 18px;
+      width: 85%;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      display: block;
+      transition: border-color 0.2s;
+    }
+
+    input:focus {
+      border-color: #007B8F;
+      outline: none;
+    }
+
+    #buttons button {
+      margin: 8px;
+      padding: 12px 18px;
+      font-size: 20px;
+      cursor: pointer;
+      border: 2px solid #007B8F;
+      border-radius: 8px;
+      background: #ffffff;   /* white background */
+      color: #007B8F;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    #buttons button:hover {
+      background: #007B8F;
+      color: white;
+    }
+
+    #output {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #output p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Calculator</h1>
+    <form id="calcForm">
+      <input type="text" id="num1" placeholder="First Number" required>
+      <input type="text" id="num2" placeholder="Second Number" required>
+      <div id="buttons">
+        <button type="button" data-op="add">➕</button>
+        <button type="button" data-op="subtract">➖</button>
+        <button type="button" data-op="multiply">✖</button>
+        <button type="button" data-op="divide">➗</button>
+      </div>
+    </form>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const btns = document.querySelectorAll("#buttons button");
+    const output = document.getElementById("output");
+
+    btns.forEach(btn => {
+      btn.addEventListener("click", () => calculate(btn.dataset.op));
+    });
+
+    async function calculate(operation) {
+      const num1 = document.getElementById("num1").value;
+      const num2 = document.getElementById("num2").value;
+
+      const response = await fetch("/calculate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ num1, num2, operation })
+      });
+
+      const data = await response.json();
+
+      output.innerHTML = "";
+      if (data.error) {
+        output.innerHTML = `<p style="color:crimson">${data.error}</p>`;
+      } else {
+        output.innerHTML = `<p style="color:green">Result: ${data.result}</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
