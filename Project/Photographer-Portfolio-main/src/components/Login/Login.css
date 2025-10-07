@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 20px 0;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+#remember {
+  accent-color: #fff;
+}
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+.forget label p {
+  margin-left: 8px;
+}
+
+.wrapper a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+}
+
+.register {
+  text-align: center;
+  margin-top: 25px;
+  color: #fff;
+}
+
+/* ===== New styles for error and admin messages ===== */
+
+/* Error message */
+.error-message {
+  background-color: rgba(211, 47, 47, 0.8); /* semi-transparent red */
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.7);
+  user-select: none;
+}
+
+/* Admin message */
+.admin-message {
+  background-color: rgba(25, 118, 210, 0.85); /* semi-transparent blue */
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(25, 118, 210, 0.7);
+  user-select: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.google-login-button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #4285F4; /* Google blue */
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.google-login-button:hover {
+  background-color: #357ae8; /* Darker blue on hover */
+}
+
+.google-login-button:active {
+  background-color: #2a65c7;
+}
+
+.google-login-button:focus {
+  outline: 3px solid #cce4f7;
+  outline-offset: 2px;
+}
+
+/* Optional: add a Google icon inside the button */
+.google-login-button img {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Simple fadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 90vw;      /* use most of viewport width on small screens */
+    padding: 30px 20px;  /* reduce padding for smaller devices */
+  }
+
+  h2 {
+    font-size: 1.5rem;   /* smaller heading */
+  }
+
+  .input-field label {
+    font-size: 14px;     /* slightly smaller labels */
+  }
+
+  .input-field input {
+    font-size: 14px;
+    height: 36px;
+  }
+
+  button,
+  .google-login-button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .forget {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .forget label p {
+    margin-left: 4px;
+  }
+
+  .register {
+    font-size: 14px;
+  }
+}
+
+/* Optional for slightly larger screens (tablet) */
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 350px;
+    padding: 35px 25px;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+}

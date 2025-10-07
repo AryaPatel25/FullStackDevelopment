@@ -1,0 +1,348 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #0e0e10;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* === Portfolio Header with Glassmorphism and subtle animations === */
+
+.portfolio-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 60px;
+  padding: 40px 50px;
+  border-radius: 20px;
+  background: rgba(30, 30, 40, 0.6);
+  box-shadow:
+    0 8px 32px 0 rgba(74, 44, 237, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(74, 44, 237, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.portfolio-header:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 40px 0 rgba(74, 44, 237, 0.7),
+    0 0 40px 8px rgba(123, 82, 255, 0.7);
+}
+
+.portfolio-header-content {
+  flex: 1 1 450px;
+  min-width: 320px;
+  max-width: 520px;
+  color: #eee;
+}
+
+.header-text-container {
+  max-width: 480px;
+}
+
+.header-label {
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  margin-bottom: 14px;
+  color: #b9a6ff;
+  user-select: none;
+  text-shadow: 0 0 6px rgba(123, 82, 255, 0.7);
+}
+
+.header-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin: 0 0 16px 0;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow:
+    0 0 6px rgba(74, 44, 237, 0.9),
+    0 0 15px rgba(123, 82, 255, 0.7);
+}
+
+.header-description {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #ccc;
+  letter-spacing: 0.02em;
+  max-width: 400px;
+  user-select: text;
+}
+
+/* Image container with floating animation */
+.header-gallery {
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 360px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 12px 30px rgba(74, 44, 237, 0.6);
+  transition: transform 0.4s ease;
+  animation: floatUpDown 6s ease-in-out infinite;
+}
+
+.header-gallery:hover {
+  transform: scale(1.1) rotate(1.5deg);
+  animation-play-state: paused;
+  box-shadow:
+    0 20px 50px rgba(74, 44, 237, 0.9);
+}
+
+.header-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+  filter: drop-shadow(0 0 6px #7b52ffcc);
+  transition: filter 0.3s ease;
+}
+
+.header-gallery-image:hover {
+  filter: drop-shadow(0 0 14px #b58fffdd);
+}
+
+/* Floating animation keyframes */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 10px #6f42c1cc);
+  }
+  50% {
+    transform: translateY(-12px);
+    filter: drop-shadow(0 0 18px #8e52ffcc);
+  }
+}
+
+/* === Rest of your existing styles unchanged === */
+
+.portfolio-container {
+  padding: 80px 20px 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #121214;
+  overflow: visible;
+}
+
+.portfolio-section {
+  margin-bottom: 50px;
+  overflow: visible;
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.navigation-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+.projects-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 20px 10px 20px;
+  flex-wrap: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.projects-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.project-wrapper {
+  flex-shrink: 0;
+  padding: 8px;
+  overflow: visible;
+  position: relative;
+}
+
+.project-card {
+  min-width: 250px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px rgba(74, 44, 237, 0.3);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 15px #4a2ced,
+    0 0 40px #4a2ced;
+  z-index: 10;
+}
+
+.project-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  margin: 0;
+}
+
+.project-overlay {
+  padding: 12px 16px;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 0 0 12px 12px;
+  display: block;
+  height: auto;
+  pointer-events: auto;
+}
+
+.project-title {
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.project-date {
+  margin: 0;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .portfolio-container {
+    padding: 40px 10px 10px 10px;
+  }
+
+  .project-card {
+    min-width: 200px;
+  }
+
+  .project-image {
+    height: 220px;
+  }
+
+  .portfolio-header {
+    flex-direction: column;
+    padding: 25px 20px 35px 20px;
+  }
+
+  .portfolio-header-content,
+  .header-gallery {
+    flex: none;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .header-title {
+    font-size: 2.6rem;
+  }
+
+  .header-gallery {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-container {
+    padding: 30px 15px 15px 15px;
+  }
+
+  .portfolio-header {
+    padding: 20px 15px 25px 15px;
+    border-radius: 16px;
+    gap: 20px;
+  }
+
+  .portfolio-header-content,
+  .header-gallery {
+    width: 100%;
+    min-width: auto;
+    max-width: 100%;
+  }
+
+  .header-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .header-label {
+    font-size: 0.85rem;
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+  }
+
+  .header-description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .header-gallery {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(74, 44, 237, 0.5);
+  }
+
+  .project-card {
+    min-width: 160px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .nav-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+}

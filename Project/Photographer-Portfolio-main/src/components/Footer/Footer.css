@@ -1,0 +1,156 @@
+.footer {
+  width: 100%;
+  background-color: #1c1c21;
+  box-sizing: border-box;
+  color: #797c86;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.social-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 100px;
+  border: 1px solid #2f2f37;
+  background-color: #070708;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 14px;
+  border-radius: 100px;
+  background-color: #1c1c21;
+  border: 1px solid #2f2f37;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.social-button:hover {
+  background-color: #2f2f37;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  align-content: left;
+}
+
+.footer-link {
+  color: #797c86;
+  cursor: pointer;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 27px;
+  background-color: #1c1c21;
+}
+
+.footer-copyright {
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Responsive layout adjustment */
+@media (max-width: 1024px) {
+  .footer-main {
+    justify-content: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .footer-divider {
+    display: none; /* hide divider on smaller screens */
+  }
+
+  .footer-copyright {
+    text-align: center;
+    margin-left: 0;
+    font-size: 16px; /* slightly smaller font */
+  }
+
+  .social-buttons-container {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .social-button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+  }
+
+  .social-button {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+  }
+
+  .social-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
