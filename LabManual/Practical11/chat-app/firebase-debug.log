@@ -1,0 +1,93 @@
+[debug] [2025-08-22T08:31:59.345Z] ----------------------------------------------------------------------
+[debug] [2025-08-22T08:31:59.348Z] Command:       C:\nvm4w\nodejs\node.exe C:\Users\aryap\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --debug
+[debug] [2025-08-22T08:31:59.348Z] CLI Version:   14.14.0
+[debug] [2025-08-22T08:31:59.348Z] Platform:      win32
+[debug] [2025-08-22T08:31:59.348Z] Node Version:  v22.17.1
+[debug] [2025-08-22T08:31:59.348Z] Time:          Fri Aug 22 2025 14:01:59 GMT+0530 (India Standard Time)
+[debug] [2025-08-22T08:31:59.349Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-22T08:31:59.524Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-22T08:31:59.525Z] > authorizing via signed-in user (aryapatel252005@gmail.com)
+[debug] [2025-08-22T08:31:59.525Z] [iam] checking project practical11-c6afe for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-08-22T08:31:59.527Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:31:59.527Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:31:59.528Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/practical11-c6afe:testIamPermissions [none]
+[debug] [2025-08-22T08:31:59.529Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/practical11-c6afe:testIamPermissions x-goog-quota-user=projects/practical11-c6afe
+[debug] [2025-08-22T08:31:59.529Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/practical11-c6afe:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-22T08:32:00.982Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/practical11-c6afe:testIamPermissions 200
+[debug] [2025-08-22T08:32:00.983Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/practical11-c6afe:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-08-22T08:32:00.983Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:00.983Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:00.984Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/practical11-c6afe [none]
+[debug] [2025-08-22T08:32:01.352Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/practical11-c6afe 200
+[debug] [2025-08-22T08:32:01.353Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/practical11-c6afe {"projectId":"practical11-c6afe","projectNumber":"45891733889","displayName":"Practical11","name":"projects/practical11-c6afe","resources":{"hostingSite":"practical11-c6afe"},"state":"ACTIVE","etag":"1_ebe58349-6958-4e1b-91c4-4fe3da810db2"}
+[info] 
+[info] === Deploying to 'practical11-c6afe'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2025-08-22T08:32:01.358Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:01.358Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:01.358Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/versions [none]
+[debug] [2025-08-22T08:32:01.359Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2025-08-22T08:32:02.603Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/versions 200
+[debug] [2025-08-22T08:32:02.603Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/versions {"name":"projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[practical11-c6afe]: beginning deploy... 
+[info] i  hosting[practical11-c6afe]: found 6 files in public 
+[debug] [2025-08-22T08:32:02.616Z] [hosting] uploading with 200 concurrency
+[debug] [2025-08-22T08:32:02.622Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:02.623Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:02.624Z] [hosting] hash cache [cHVibGlj] stored for 6 files
+[debug] [2025-08-22T08:32:02.624Z] [hosting][hash queue][FINAL] {"max":4,"min":1,"avg":1.5,"active":0,"complete":6,"success":6,"errored":0,"retried":0,"total":6,"elapsed":7}
+[debug] [2025-08-22T08:32:02.625Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f:populateFiles [none]
+[debug] [2025-08-22T08:32:02.625Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f:populateFiles {"files":{"/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/manifest.json":"ee04fb47e525c67d8424ffe9b4d8a8a24e434504478afca4e0ca602146836d4c","/logo512.png":"212b102aa09e51b3b3e06647e81f7801a61333e171f6582e8124379aabccb41d","/logo192.png":"79e2b749561016bc8af300ea19f48347ceed3cb1a54f48ae456172eca45e08f0","/favicon.ico":"27edce7be5922cf0bef7d4136f69b5bfbdd5bf8c13c7b026f71187d41a00aa7d","/index.html":"77c9430ae51a367d5efd0a2d375f0ee083f4915bb98f88624cb1b3be070b5e07"}}
+[debug] [2025-08-22T08:32:03.062Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f:populateFiles 200
+[debug] [2025-08-22T08:32:03.063Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/practical11-c6afe/versions/f2c7d49ca5b4866f/files"}
+[debug] [2025-08-22T08:32:03.063Z] [hosting][populate queue][FINAL] {"max":441,"min":441,"avg":441,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":441}
+[debug] [2025-08-22T08:32:03.063Z] [hosting] uploads queued: 0
+[debug] [2025-08-22T08:32:03.064Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1755851523064}
+[info] i  hosting: upload complete 
+[info] +  hosting[practical11-c6afe]: file upload complete 
+[debug] [2025-08-22T08:32:03.064Z] [hosting] deploy completed after 458ms
+[debug] [2025-08-22T08:32:03.064Z] [
+  {
+    "config": {
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "practical11-c6afe"
+    },
+    "version": "projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f"
+  }
+]
+[info] i  hosting[practical11-c6afe]: finalizing version... 
+[debug] [2025-08-22T08:32:03.067Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:03.067Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:03.067Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/versions/f2c7d49ca5b4866f updateMask=status%2Cconfig
+[debug] [2025-08-22T08:32:03.067Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/versions/f2c7d49ca5b4866f {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2025-08-22T08:32:03.533Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/versions/f2c7d49ca5b4866f 200
+[debug] [2025-08-22T08:32:03.534Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/versions/f2c7d49ca5b4866f {"name":"projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-22T08:31:48.040624Z","createUser":{"email":"aryapatel252005@gmail.com"},"finalizeTime":"2025-08-22T08:31:49.216010Z","finalizeUser":{"email":"aryapatel252005@gmail.com"}}
+[debug] [2025-08-22T08:32:03.534Z] [hosting] finalized version for practical11-c6afe:[object Object]
+[info] +  hosting[practical11-c6afe]: version finalized 
+[info] i  hosting[practical11-c6afe]: releasing new version... 
+[debug] [2025-08-22T08:32:03.535Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:03.535Z] Checked if tokens are valid: true, expires at: 1755854006277
+[debug] [2025-08-22T08:32:03.535Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/channels/live/releases versionName=projects%2F45891733889%2Fsites%2Fpractical11-c6afe%2Fversions%2Ff2c7d49ca5b4866f
+[debug] [2025-08-22T08:32:03.535Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/channels/live/releases {}
+[debug] [2025-08-22T08:32:04.261Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/channels/live/releases 200
+[debug] [2025-08-22T08:32:04.261Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/practical11-c6afe/channels/live/releases {"name":"projects/45891733889/sites/practical11-c6afe/channels/live/releases/1755851509355000","version":{"name":"projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-22T08:31:48.040624Z","createUser":{"email":"aryapatel252005@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKOfgCuQH-6H0-1jO6uPMVl18CWdBX1AOcRBbZAbxNG-SVAgw=mo"},"finalizeTime":"2025-08-22T08:31:49.216010Z","finalizeUser":{"email":"aryapatel252005@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKOfgCuQH-6H0-1jO6uPMVl18CWdBX1AOcRBbZAbxNG-SVAgw=mo"}},"type":"DEPLOY","releaseTime":"2025-08-22T08:31:49.355Z","releaseUser":{"email":"aryapatel252005@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKOfgCuQH-6H0-1jO6uPMVl18CWdBX1AOcRBbZAbxNG-SVAgw=mo"}}
+[debug] [2025-08-22T08:32:04.262Z] [hosting] release: {"name":"projects/45891733889/sites/practical11-c6afe/channels/live/releases/1755851509355000","version":{"name":"projects/45891733889/sites/practical11-c6afe/versions/f2c7d49ca5b4866f","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2025-08-22T08:31:48.040624Z","createUser":{"email":"aryapatel252005@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKOfgCuQH-6H0-1jO6uPMVl18CWdBX1AOcRBbZAbxNG-SVAgw=mo"},"finalizeTime":"2025-08-22T08:31:49.216010Z","finalizeUser":{"email":"aryapatel252005@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKOfgCuQH-6H0-1jO6uPMVl18CWdBX1AOcRBbZAbxNG-SVAgw=mo"}},"type":"DEPLOY","releaseTime":"2025-08-22T08:31:49.355Z","releaseUser":{"email":"aryapatel252005@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKOfgCuQH-6H0-1jO6uPMVl18CWdBX1AOcRBbZAbxNG-SVAgw=mo"}}
+[info] +  hosting[practical11-c6afe]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/practical11-c6afe/overview
+[info] Hosting URL: https://practical11-c6afe.web.app
